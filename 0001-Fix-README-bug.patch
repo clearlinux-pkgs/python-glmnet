@@ -1,0 +1,33 @@
+From d71e8f1f2c3f1e5c2e3faec156140666943676c8 Mon Sep 17 00:00:00 2001
+From: Victor Rodriguez <victor.rodriguez.bahena@intel.com>
+Date: Mon, 19 Sep 2016 23:51:16 +0000
+Subject: [PATCH] Fix README bug
+
+Signed-off-by: Victor Rodriguez <victor.rodriguez.bahena@intel.com>
+---
+ setup.py | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/setup.py b/setup.py
+index f9e28dd..c534592 100644
+--- a/setup.py
++++ b/setup.py
+@@ -1,5 +1,6 @@
+ import sys
+ import os
++import io
+ 
+ try:
+     from numpy.distutils.core import Extension, setup
+@@ -13,7 +14,7 @@ f_compile_args = ['-ffixed-form', '-fdefault-real-8']
+ 
+ 
+ def read(fname):
+-    with open(os.path.join(os.path.dirname(__file__), fname)) as _in:
++    with io.open(os.path.join(os.path.dirname(__file__),fname),encoding="utf-8") as _in:
+         return _in.read()
+ 
+ 
+-- 
+2.9.3
+
