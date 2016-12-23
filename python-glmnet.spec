@@ -4,7 +4,7 @@
 #
 Name     : python-glmnet
 Version  : 1.0.0
-Release  : 3
+Release  : 4
 URL      : http://pypi.debian.net/glmnet/glmnet-1.0.0.tar.gz
 Source0  : http://pypi.debian.net/glmnet/glmnet-1.0.0.tar.gz
 Summary  : Python wrapper for glmnet
