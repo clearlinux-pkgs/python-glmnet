@@ -4,12 +4,12 @@
 #
 Name     : python-glmnet
 Version  : 1.0.0
-Release  : 6
+Release  : 7
 URL      : http://pypi.debian.net/glmnet/glmnet-1.0.0.tar.gz
 Source0  : http://pypi.debian.net/glmnet/glmnet-1.0.0.tar.gz
 Summary  : Python wrapper for glmnet
 Group    : Development/Tools
-License  : GPL-2.0
+License  : BSD-3-Clause GPL-2.0
 Requires: python-glmnet-python
 BuildRequires : numpy
 BuildRequires : pbr
@@ -38,13 +38,15 @@ python components for the python-glmnet package.
 
 %build
 export LANG=C
+export SOURCE_DATE_EPOCH=1484568056
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
+export SOURCE_DATE_EPOCH=1484568056
 rm -rf %{buildroot}
-python2 -tt setup.py build -b py2 install --root=%{buildroot}
-python3 -tt setup.py build -b py3 install --root=%{buildroot}
+python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
+python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
 
 %files
 %defattr(-,root,root,-)
